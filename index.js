@@ -4,7 +4,7 @@ require("dotenv").config()
 
 const API_KEY = process.env.API_KEY; 
 const CHANNEL_ID = process.env.CHANNEL_ID; 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 let nextPageToken;
 let requestInterval = 5000;

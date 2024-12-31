@@ -1,10 +1,10 @@
 app = "computer-craft-chat"
 
 [build]
-dockerfile = "Dockerfile" # Specify the Dockerfile to use for the build
+dockerfile = "Dockerfile"
 
 [env]
-PORT = "8080" # Environment variable for your app (required for Fly.io)
+PORT = "8080"
 
 [[services]]
   internal_port = 8080
