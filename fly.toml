@@ -3,9 +3,6 @@ app = "computer-craft-chat"
 [build]
 dockerfile = "Dockerfile"
 
-[env]
-PORT = "8080"
-
 [[services]]
   internal_port = 8080
   protocol = "tcp"
