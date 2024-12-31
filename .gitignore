@@ -1,0 +1,6 @@
+package-lock.json
+package.json
+.gcloudignore
+app.yaml
+node_modules
+.env
