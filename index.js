@@ -98,7 +98,7 @@ const getCurrentLiveStreamId = async () => {
       sendChatMessages();
       ws.on('close', () => {
         console.log('Client disconnected.');
-        process.abort();
+        clearTimeout(process);
       });
     });
   };
