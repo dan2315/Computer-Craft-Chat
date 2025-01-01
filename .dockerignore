@@ -1,0 +1,6 @@
+# flyctl launch added from .gitignore
+**\.gcloudignore
+**\app.yaml
+**\node_modules
+**\.env
+fly.toml

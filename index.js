@@ -68,6 +68,7 @@ const getCurrentLiveStreamId = async () => {
       console.log(`Recieved ${messages.length} messages`)
       nextPageToken = response.data.nextPageToken;
       requestInterval = response.data.pollingIntervalMillis || 5000;
+      console.log(`The next message fetch will be in ${requestInterval}`)
   
       return messages;
     } catch (error) {
@@ -93,9 +94,8 @@ const getCurrentLiveStreamId = async () => {
          setTimeout(sendChatMessages, requestInterval);
       };
   
-      
+      sendChatMessages();
       ws.on('close', () => {
-        clearInterval(interval);
         console.log('Client disconnected.');
       });
     });
