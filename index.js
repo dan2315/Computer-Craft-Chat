@@ -78,7 +78,8 @@ const getCurrentLiveStreamId = async () => {
 
   const startWebSocketServer = () => {
     const wss = new WebSocket.Server({ port: PORT });
-  
+    console.log(`Websocket Started on port: ${PORT}`)
+
     wss.on('connection', (ws) => {
       console.log('Client connected.');
   
