@@ -78,6 +78,7 @@ const getCurrentLiveStreamId = async () => {
   };
 
   const startWebSocketServer = () => {
+    let process;
     const wss = new WebSocket.Server({ port: PORT });
     console.log(`Websocket Started on port: ${PORT}`)
 
@@ -90,13 +91,14 @@ const getCurrentLiveStreamId = async () => {
           ws.send(JSON.stringify(messages));
         }
         
+        process = setTimeout(sendChatMessages, requestInterval);
         console.log(`Messages: \n ${messages}`)
-         setTimeout(sendChatMessages, requestInterval);
       };
   
       sendChatMessages();
       ws.on('close', () => {
         console.log('Client disconnected.');
+        process.abort();
       });
     });
   };
